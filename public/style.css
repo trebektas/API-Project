@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: bisque;
+    border-bottom: solid 5px grey;
+}
+
+.football-logo{
+    width: 300px;
+}
+
+.header-text{
+    justify-content: center;
+    text-align: center;
+    margin: 0px 20px;
+    font-size: 80px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: auto;
+    padding: 20px;
+}
+
+.navigation-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.navigation-list-item {
+    margin: 0 auto;
+    font-size: 40px;
+}
+
+.main-content{
+}
+
+.footer {
+}
+
+.footer-text {
+    font-size: 40px;
+}
