@@ -5,48 +5,84 @@
 }
 
 .header{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: bisque;
     border-bottom: solid 5px grey;
+    border-top: solid 5px grey;
+    display: flex;
+    background-color: #FFF7E9;
 }
 
-.football-logo{
-    width: 300px;
-}
-
-.header-text{
-    justify-content: center;
-    text-align: center;
-    margin: 0px 20px;
-    font-size: 80px;
+.nba-logo{
+    width: 100px;
+    margin: 20px 30px;
+    cursor: pointer;
 }
 
 .navigation {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     flex: auto;
-    padding: 20px;
+    margin-left: 40px;
 }
 
-.navigation-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap
+.navigation-texts{
+    font-size: 30px;
 }
 
-.navigation-list-item {
-    margin: 0 auto;
-    font-size: 40px;
+.navigation-links {
+    cursor: pointer;
 }
 
 .main-content{
+    font-family: sans-serif;
 }
 
 .footer {
+    background-color: #FFF7E9;
 }
 
 .footer-text {
-    font-size: 40px;
+    border-top: solid 5px grey;;
+}
+
+.home-header {
+    margin: 30px auto 20px;
+    text-align: center;
+}
+
+.home-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    margin: 0 60px 30px;
+}
+
+.nba-court {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.paragraphs {
+    margin: 20px;
+    text-indent: 5%;
+}
+
+.home-paragraph {
+    margin: 0px 20px 20px;
+    line-height: 150%;
+    font-size: 1vw;
+}
+
+@media only screen and (max-width: 992px){
+    .navigation-texts{
+        font-size: 4vw;
+    }
+
+    .home-main {
+        grid-template-columns: 1fr;
+    }
+
+    .home-paragraph {
+        font-size: 2vw;
+    }
 }
