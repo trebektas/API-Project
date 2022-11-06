@@ -1,15 +1,8 @@
 'use strict';
 
-import { FETCH_NBA_TEAMS, MAIN_CONTENT_ID, NBA_LOGO_ID } from '../constants.js';
+import { MAIN_CONTENT_ID, HOME_LINK_ID, TEAMS_LINK_ID } from '../constants.js';
 import { createHomeContentElement } from '../views/homeView.js';
-
-
-async function requestData(url) {   
-    return await fetch(url)
-    .then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-}
+import { teamsData } from './teamPage.js';
 
 export function main() {
     const mainContent = document.getElementById(MAIN_CONTENT_ID);
@@ -18,14 +11,13 @@ export function main() {
     const homeContent = createHomeContentElement();
     mainContent.appendChild(homeContent);
 
-    //This code block will delete when the project is finish
-    const logoNba = document.getElementById(NBA_LOGO_ID);
-    logoNba.addEventListener('click', () => {
-        requestData(FETCH_NBA_TEAMS);
-    });
-
-    const linkHome = document.getElementById(HOME_LINK_ID);
-    linkHome.addEventListener('click', () => {
+    const homeLink = document.getElementById(HOME_LINK_ID);
+    homeLink.addEventListener('click', () => {
         main();
-    });
+    }, {once : true});
+
+    const teamsLink = document.getElementById(TEAMS_LINK_ID);
+    teamsLink.addEventListener('click', () => {
+        teamsData();
+    }, {once : true});
 }

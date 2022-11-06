@@ -27,12 +27,7 @@
 
 .navigation-texts{
     font-size: 30px;
-}
-
-.navigation-links {
     cursor: pointer;
-    text-decoration: none;
-    color: #000;
 }
 
 .main-content{
