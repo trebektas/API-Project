@@ -13,28 +13,4 @@ export const createTeamsContentElement = () => {
     return teamsContent;
 };
 
-export const createTeamDetails = () => {
-
-    const teamDetails = document.createElement('section');
-    const teamLogo = document.createElement('img');
-    const teamTexts = document.createElement('div');
-    teamDetails.appendChild(teamLogo);
-    teamDetails.appendChild(teamTexts);
-    teamDetails.classList.add('team-section');
-    teamLogo.classList.add('team-logo');
-    teamTexts.classList.add('team-texts');
-
-    const teamName = document.createElement('h3');
-    const teamConference = document.createElement('h5');
-    const teamDivision = document.createElement('h5');
-    teamTexts.appendChild(teamName);
-    teamTexts.appendChild(teamConference);
-    teamTexts.appendChild(teamDivision);
-    teamName.classList.add('team-name');
-    teamConference.classList.add('team-conference');
-    teamDivision.classList.add('team-division');
-    
-    return teamDetails;
-};
-
 
