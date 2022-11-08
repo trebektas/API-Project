@@ -26,7 +26,8 @@ export async function playersData() {
             allPlayersDataArray = [...allPlayersDataArray, ...responsePlayersData];
         } catch (error) {
             console.log(error);
-            alert(`` + error);
+            alert(`There was an error fetching the data!`);
+            hideLoading();
         }
     }
 

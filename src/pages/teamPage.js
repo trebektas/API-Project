@@ -2,6 +2,7 @@
 
 import { MAIN_CONTENT_ID, FETCH_NBA_TEAMS, ALL_TEAMS_DETAILS } from '../constants.js';
 import { createTeamsContentElement } from '../views/teamView.js';
+import { hideLoading } from '../views/loadingView.js';
 
 export function teamsData() {
     const mainContent = document.getElementById(MAIN_CONTENT_ID);
@@ -19,7 +20,8 @@ export async function getFetchData(url) {
         return await response.json();
     } catch (error) {
         console.log(error);
-        alert(error);
+        alert(`There was an error fetching the data!`);
+        hideLoading();
     }
 }  
 
