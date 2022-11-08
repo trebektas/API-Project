@@ -1,12 +1,13 @@
 'use strict';
 
+import { ALL_TEAMS_DETAILS } from "../constants.js";
+
 export const createTeamsContentElement = () => {
     const teamsContent = document.createElement('div');
-    teamsContent.classList.add('all-teams-block');
     teamsContent.innerHTML = String.raw`
-    <section class="all-teams-section">
+    <section>
         <h1 class="all-teams-header">ALL TEAMS</h1>
-        <div class="all-teams-details" id="all-teams-details">
+        <div class=${ALL_TEAMS_DETAILS} id=${ALL_TEAMS_DETAILS}>
         </div>
     </section>
   `;

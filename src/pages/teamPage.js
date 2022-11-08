@@ -1,6 +1,6 @@
 'use strict';
 
-import { MAIN_CONTENT_ID, FETCH_NBA_TEAMS } from '../constants.js';
+import { MAIN_CONTENT_ID, FETCH_NBA_TEAMS, ALL_TEAMS_DETAILS } from '../constants.js';
 import { createTeamsContentElement } from '../views/teamView.js';
 
 export function teamsData() {
@@ -19,6 +19,7 @@ export async function getFetchData(url) {
         return await response.json();
     } catch (error) {
         console.log(error);
+        alert(error);
     }
 }  
 
@@ -29,14 +30,14 @@ async function renderTeams() {
         teamDetails.classList.add('team-section');
         teamDetails.innerHTML = String.raw`
             <img src="./public/teamLogos/${team.id}.svg" alt="Team Logo" class="team-logo">
-            <div class="team-texts">
+            <div">
                 <h3 class="team-name">${team.full_name}</h3>
                 <h5 class="team-conference">Conference: ${team.conference}</h5>
                 <h5 class="team-division">Division: ${team.division}</h5>
             </div>
         `;
-        const divAllTeams = document.getElementById('all-teams-details');
+
+        const divAllTeams = document.getElementById(ALL_TEAMS_DETAILS);
         divAllTeams.appendChild(teamDetails);
-        
     });
 }

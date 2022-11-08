@@ -1,14 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+.page{
+    min-height:100vh; 
+    display:flex; 
+    flex-direction:column; 
+    justify-content:space-between
+}
+
 .header{
-    border-bottom: solid 5px grey;
-    border-top: solid 5px grey;
+    border-bottom: solid 5px #928A97;
+    border-top: solid 5px #928A97;
     display: flex;
-    background-color: #FFF7E9;
+    background-color: #FBE8D3;
 }
 
 .nba-logo{
@@ -28,21 +38,36 @@
 .navigation-texts{
     font-size: 30px;
     cursor: pointer;
+    font-family: 'Kanit', sans-serif;
+}
+
+.navigation-texts:hover{
+    text-decoration: underline;
+}
+
+.loader-container{
+    display: none;
+}
+
+.loading-text{
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
 }
 
 .main-content{
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .footer {
-    background-color: #FFF7E9;
-    border-top: solid 5px grey;
+    background-color: #FBE8D3;
+    border-top: solid 5px #928A97;
     padding-top: 10px;
 }
 
 .footer-text a {
     text-decoration: none;
     color: #000;
+    font-family: 'Kanit', sans-serif;
 }
 
 .footer-text:hover{
@@ -69,11 +94,13 @@
 .copyright {
     padding-bottom: 20px;
     padding-left: 30px;
+    font-family: 'Inter', sans-serif;
 }
 
 .home-header {
     margin: 30px auto 20px;
     text-align: center;
+    color: #000;
 }
 
 .home-main {
@@ -91,12 +118,127 @@
 .paragraphs {
     margin: 20px;
     text-indent: 5%;
+    color: #000;
 }
 
 .home-paragraph {
     margin: 0px 20px 20px;
     line-height: 150%;
     font-size: 1vw;
+}
+
+.all-teams-header{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 2em;
+    color: #000;
+}
+
+.all-teams-details {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 120px;
+    justify-content: center;
+}
+
+.team-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    flex-basis: auto;
+}
+
+.team-logo{
+    width: 200px;
+    height: 200px;
+}
+
+.team-name{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.team-conference{
+    margin-top: 10px;
+    color: #928A97;
+}
+
+.team-division{
+    margin-top: 5px;
+    color: #928A97;
+}
+
+.all-players-block{
+    min-height:70vh; 
+    display: flex;
+    flex-direction:column; 
+    justify-content:space-between
+}
+
+.filter-bar{
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.select-team{
+    margin-right: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.select-team:hover{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.select-button{
+    margin-left: 10px;
+    padding: 5px;
+    background-color: #FBE8D3;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    border-color: #928A97;
+}
+
+.select-button:hover{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    opacity: 0.9;
+}
+
+.players-div{
+    width: 80%;
+    margin: 40px auto;
+}
+
+.players-table{
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.players-header{
+    color: #F7F7F7;
+    background-color: #928A97;
+}
+
+.players-header th, .player-details td{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table-body tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+@media only screen and (max-width: 1080px){
+    .all-teams-details {
+        padding: 40px 30px;
+    }
 }
 
 @media only screen and (max-width: 992px){
@@ -130,85 +272,8 @@
     .home-main {
         margin: 0 20px 20px;
     }
-}
 
-.all-teams-header{
-    margin-top: 50px;
-    text-align: center;
-    font-size: 2em;
-}
-
-.all-teams-details {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 40px 120px;
-    justify-content: center;
-}
-
-.team-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 40px;
-    flex-basis: auto;
-}
-
-.team-logo{
-    width: 200px;
-    height: 200px;
-}
-
-.team-name{
-    margin-top: 30px;
-    text-align: center;
-}
-
-.team-conference{
-    margin-top: 10px;
-}
-
-.team-division{
-    margin-top: 5px;
-}
-
-.filter-bar{
-    margin: 30px 0;
-    display: flex;
-    justify-content: center;
-}
-
-.select-team{
-    margin-right: 10px;
-    padding: 5px;
-}
-
-.select-button{
-    margin-left: 10px;
-    padding: 5px;
-}
-
-.players-div{
-    width: 80%;
-    margin: 40px auto;
-}
-
-.players-table{
-    width: 100%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    table-layout: auto;
-}
-
-.players-header{
-    color: red;
-}
-
-.players-header th, .player-details td{
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.table-body tr:nth-child(even){
-    background-color: #f2f2f2;
+    .all-teams-details {
+        padding: 40px 10px;
+    }
 }

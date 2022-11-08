@@ -4,6 +4,7 @@ import { MAIN_CONTENT_ID, HOME_LINK_ID, TEAMS_LINK_ID, PLAYERS_LINK_ID} from '..
 import { createHomeContentElement } from '../views/homeView.js';
 import { teamsData } from '../pages/teamPage.js';
 import { playersData } from '../pages/playerPage.js';
+import { hideLoading } from '../views/loadingView.js';
 
 export function main() {
 
@@ -20,11 +21,13 @@ export function main() {
     const homeLink = document.getElementById(HOME_LINK_ID);
     homeLink.addEventListener('click', () => {
         homePage();
+        hideLoading();
     });
 
     const teamsLink = document.getElementById(TEAMS_LINK_ID);
     teamsLink.addEventListener('click', () => {
         teamsData();
+        hideLoading();
     });
   
     const playersLink = document.getElementById(PLAYERS_LINK_ID);
