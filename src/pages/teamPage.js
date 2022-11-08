@@ -10,30 +10,33 @@ export function teamsData() {
     const teamsContent = createTeamsContentElement();
     mainContent.appendChild(teamsContent);
 
-    async function getTeams() {   
-        const response = await fetch(FETCH_NBA_TEAMS);
-        const requestData = await response.json();
-        const teamsData = requestData.data;
-        teamsData.forEach(team => {
-            // const teamDetails = createTeamDetails();
-            const teamDetails = document.createElement('section');
-            teamDetails.classList.add('team-section');
-            teamDetails.innerHTML = String.raw`
-                <img src="../../public/teamLogos/${team.id}.svg" alt="Team Logo" class="team-logo">
-                <div class="team-texts">
-                    <h3 class="team-name">${team.full_name}</h3>
-                    <h5 class="team-conference">${team.conference}</h5>
-                    <h5 class="team-division">${team.division}</h5>
-                </div>
-            `;
-            const divAllTeams = document.getElementById('all-teams-details');
-            divAllTeams.appendChild(teamDetails);
-            
-        });
-    }
-
-    getTeams();
-
+    renderTeams();
 }
 
+export async function getFetchData(url) {
+    try {
+        const response = await fetch(url);
+        return await response.json();
+    } catch (error) {
+        console.log(error);
+    }
+}  
 
+async function renderTeams() {   
+    const responseData = await getFetchData(FETCH_NBA_TEAMS);
+    responseData.data.forEach(team => {
+        const teamDetails = document.createElement('section');
+        teamDetails.classList.add('team-section');
+        teamDetails.innerHTML = String.raw`
+            <img src="../../public/teamLogos/${team.id}.svg" alt="Team Logo" class="team-logo">
+            <div class="team-texts">
+                <h3 class="team-name">${team.full_name}</h3>
+                <h5 class="team-conference">Conference: ${team.conference}</h5>
+                <h5 class="team-division">Division: ${team.division}</h5>
+            </div>
+        `;
+        const divAllTeams = document.getElementById('all-teams-details');
+        divAllTeams.appendChild(teamDetails);
+        
+    });
+}
