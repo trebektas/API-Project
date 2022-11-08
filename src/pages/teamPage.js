@@ -28,7 +28,7 @@ async function renderTeams() {
         const teamDetails = document.createElement('section');
         teamDetails.classList.add('team-section');
         teamDetails.innerHTML = String.raw`
-            <img src="../../public/teamLogos/${team.id}.svg" alt="Team Logo" class="team-logo">
+            <img src="./public/teamLogos/${team.id}.svg" alt="Team Logo" class="team-logo">
             <div class="team-texts">
                 <h3 class="team-name">${team.full_name}</h3>
                 <h5 class="team-conference">Conference: ${team.conference}</h5>
