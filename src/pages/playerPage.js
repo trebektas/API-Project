@@ -51,9 +51,9 @@ export async function playersData() {
         const filteredPlayers = allPlayersDataArray.filter(player => player.team.id == teamId && player.position!=="");
         filteredPlayers.forEach(player => {
                         if(player.team.id == teamId && player.position!==""){
-                            const playersTable = document.getElementById('players-table')
+                            const playersBody = document.getElementById('table-body')
                             const playerDetails = document.createElement('tr');
-                            playersTable.appendChild(playerDetails);
+                            playersBody.appendChild(playerDetails);
                             playerDetails.classList.add('player-details');
                             playerDetails.id = 'player-details';
                             playerDetails.innerHTML = String.raw`
