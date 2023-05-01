@@ -1,5 +1,11 @@
 # API Project - NBA App
 
+## Demo
+
+The NBA App project is available at [NBAApp](https://trebektas.github.io/API-Project/)
+
+## Pages
+
 ![image](https://user-images.githubusercontent.com/111200262/232514163-945a1a63-8969-47ac-9430-1598a6bf74ab.png)
 
 ![image](https://user-images.githubusercontent.com/111200262/232514470-000c62c5-94be-483f-ba6b-e9246e7989b3.png)
