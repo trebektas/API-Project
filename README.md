@@ -8,9 +8,9 @@ The NBA App project is available at [NBAApp](https://trebektas.github.io/API-Pro
 
 The project consists of three pages:
 
-Home > The home page provides users with information about NBA.
-Teams > The teams page allows users to discover all NBA teams.
-Players > The players page allows users to access detailed information about all players belonging to a team.
+- Home > The home page provides users with information about NBA.
+- Teams > The teams page allows users to discover all NBA teams.
+- Players > The players page allows users to access detailed information about all players belonging to a team.
 
 ![image](https://user-images.githubusercontent.com/111200262/232514163-945a1a63-8969-47ac-9430-1598a6bf74ab.png)
 
